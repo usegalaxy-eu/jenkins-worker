@@ -42,3 +42,11 @@
 
 - name: Install it
   shell: yum install -y google-chrome-stable_current_x86_64.rpm
+
+- name: Fix environment
+  copy:
+    content: 'export PATH=/usr/local/texlive/bin/x86_64-linux/:/usr/local/lib/npm/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/rvm/bin'
+    dest: /etc/environment
+    mode: 0644
+    owner: root
+    group: root
